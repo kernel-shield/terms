@@ -118,31 +118,11 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
 .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease;}
 .reveal.in{opacity:1; transform:none;}
 @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none;} html{scroll-behavior:auto;} }
-
-.cookie-bar{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:560px; margin:0 auto;
-  background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:18px 20px;
-  box-shadow:0 24px 48px -20px rgba(27,16,64,.35); display:flex; flex-direction:column; gap:12px;
-  transform:translateY(140%); opacity:0; transition:transform .4s ease, opacity .3s ease; pointer-events:none;}
-.cookie-bar.show{transform:translateY(0); opacity:1; pointer-events:auto;}
-.cookie-bar p{margin:0; font-size:13.5px; color:var(--ink-dim); line-height:1.55;}
-.cookie-bar a{color:var(--accent-text); font-weight:600;}
-.cookie-actions{display:flex; gap:10px; flex-wrap:wrap;}
-.cookie-actions button{flex:1; min-width:110px; padding:10px 14px; border-radius:10px; font-weight:700; font-size:13.5px; cursor:pointer; font-family:inherit;}
-.cookie-accept{background:var(--purple); color:#fff; border:none;}
-.cookie-accept:hover{background:var(--purple-dark);}
-.cookie-reject{background:transparent; color:var(--ink); border:1.5px solid var(--line);}
-.cookie-reject:hover{border-color:var(--purple);}
+.i-ico{display:inline-block; width:16px; height:16px; vertical-align:-3px; margin-right:6px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0;}
+.note .i-ico{vertical-align:-2px;}
 </style>
 </head>
 <body>
-<div class="cookie-bar" id="cookieBar" role="dialog" aria-live="polite">
-  <p>Usamos almacenamiento del navegador para recordar tu tema (claro/oscuro) y, si lo aceptas, el widget de reseñas de Trustpilot de nuestra web principal, que puede poner sus propias cookies. Más detalles en la sección de <a href="#cookies">Cookies</a> de esta página.</p>
-  <div class="cookie-actions">
-    <button class="cookie-reject" id="cookieReject">Rechazar</button>
-    <button class="cookie-accept" id="cookieAccept">Aceptar</button>
-  </div>
-</div>
-
 <header>
   <div class="wrap nav">
     <a class="logo" href="https://kernelshield.xyz/"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.6c1.9 1.5 4.1 4.5 4.1 9 0 3.7-1.3 6.5-2.4 8.2a1.9 1.9 0 0 1-3.4 0c-1.1-1.7-2.4-4.5-2.4-8.2 0-4.5 2.2-7.5 4.1-9a.55.55 0 0 1 0 0Z" fill="#673DE6"/><circle cx="12" cy="9.2" r="1.7" fill="#fff"/><path d="M9 13.6 5.4 15.8v3l3.6-2.2" fill="#FFD314"/><path d="M15 13.6 18.6 15.8v3l-3.6-2.2" fill="#FFD314"/><path d="M10.6 19.4c-.25 1.35-.8 2.65-1.6 3.75-.16.22-.11.5.1.65.6.46 1.65.77 2.3-.1.4-.55.68-1.2.86-1.9" fill="#FF7A45"/><path d="M13.4 19.4c.25 1.35.8 2.65 1.6 3.75.16.22.11.5-.1.65-.6.46-1.65.77-2.3-.1-.4-.55-.68-1.2-.86-1.9" fill="#FF7A45"/></svg></span>Kernel Shield</a>
@@ -161,7 +141,7 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
     <div class="eyebrow reveal">Legal</div>
     <h1 class="reveal">Términos y Condiciones</h1>
     <p class="reveal">Este documento explica cómo funcionan las entregas, los reembolsos y el uso correcto de nuestros servicios de VPS, servidores de juegos, bots de Discord, hosting web y dominios. Al contratar un servicio con Kernel Shield, aceptas estas condiciones.</p>
-    <div class="updated reveal">🕒 Última actualización: <b>27 de septiembre de 2026</b></div>
+    <div class="updated reveal"><svg class="i-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Última actualización: <b>30 de septiembre de 2026</b></div>
   </div>
 </section>
 
@@ -176,14 +156,16 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
       <a href="#reembolsos">1. Reembolsos</a>
       <a href="#plazo-reembolso">2. Plazo para reembolsos</a>
       <a href="#uso-aceptable">3. Uso aceptable</a>
-      <a href="#conducta">4. Conducta y ataques</a>
+      <a href="#conducta">4. Conducta, ataques y responsabilidad</a>
       <a href="#entregas">5. Plazo de entrega</a>
       <a href="#precios">6. Precios fijos</a>
-      <a href="#registro">7. Registro de actividad</a>
-      <a href="#responsabilidad">8. Límite de responsabilidad</a>
-      <a href="#cuenta">9. Suspensión de cuenta</a>
-      <a href="#cambios">10. Cambios en estos términos</a>
-    <a href="#cookies">11. Cookies</a>
+      <a href="#renovaciones">7. Renovaciones y Fee por atraso</a>
+      <a href="#paneles">8. Instalación de paneles</a>
+      <a href="#entrega-funcional">9. Entrega funcional</a>
+      <a href="#registro">10. Registro de actividad</a>
+      <a href="#responsabilidad">11. Límite de responsabilidad</a>
+      <a href="#cuenta">12. Suspensión de cuenta</a>
+      <a href="#cambios">13. Cambios en estos términos</a>
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
@@ -203,7 +185,7 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
     <section id="plazo-reembolso" class="reveal">
       <div class="sec-title"><span class="sec-num">2</span><h2>Plazo para solicitar un reembolso</h2></div>
       <p>Tienes <strong>24 horas después de la entrega</strong> del servicio para reportarnos que no cumple lo prometido. Si dentro de ese plazo el problema viene de nuestro lado, hacemos el reembolso. Pasadas las 24 horas, entendemos que el servicio quedó recibido a conformidad y ya no se procesan reembolsos por esa causa.</p>
-      <div class="note">📩 Repórtalo por Discord o WhatsApp dentro de las 24 horas, contándonos qué falla exactamente. Así podemos revisarlo a tiempo.</div>
+      <div class="note"><svg class="i-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6"/></svg>Repórtalo por Discord o WhatsApp dentro de las 24 horas, contándonos qué falla exactamente. Así podemos revisarlo a tiempo.</div>
     </section>
 
     <section id="uso-aceptable" class="reveal">
@@ -217,13 +199,21 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
     </section>
 
     <section id="conducta" class="reveal">
-      <div class="sec-title"><span class="sec-num">4</span><h2>Conducta y actividades maliciosas</h2></div>
-      <p>No permitimos usar nuestros servicios para atacar a terceros, ni traer aquí conflictos o consecuencias de problemas originados fuera de nuestra plataforma. Esto incluye lanzar ataques desde tu servicio, provocar que otros te ataquen a propósito, o cualquier actividad con intención de dañar. Ante cualquiera de estos casos, el servicio se elimina <strong>sin reembolso ni devolución</strong>, y podemos negarnos a prestar servicio a futuro.</p>
+      <div class="sec-title"><span class="sec-num">4</span><h2>Conducta, ataques y responsabilidad</h2></div>
+      <p>No permitimos usar nuestros servicios para atacar a terceros, ni traer aquí conflictos o consecuencias de problemas originados fuera de nuestra plataforma. Esto incluye, entre otros casos:</p>
+      <ul class="card-list">
+        <li><span class="dot"></span>Lanzar ataques DDoS u otro tipo de ataques desde tu servicio hacia terceros.</li>
+        <li><span class="dot"></span>Tumbar tu propio servicio a propósito, o forzar fallas de manera intencional.</li>
+        <li><span class="dot"></span>Provocar o buscar a propósito que un tercero te ataque.</li>
+        <li><span class="dot"></span>Traer a nuestra plataforma problemas o consecuencias originadas en otro lugar.</li>
+      </ul>
+      <p>En estos casos <strong>no nos hacemos responsables</strong> de lo ocurrido, y el resultado es <strong>dar de baja el servicio, sin posibilidad de reembolso ni de remplazo</strong>. También podemos negarnos a prestar servicio a futuro.</p>
     </section>
 
     <section id="entregas" class="reveal">
       <div class="sec-title"><span class="sec-num">5</span><h2>Plazo de entrega</h2></div>
-      <p>El tiempo máximo de entrega de cualquier servicio es de <strong>24 horas</strong> desde que se confirma el pago. La mayoría de los servicios se entregan mucho antes, pero en casos puntuales (alta demanda, verificación de datos, configuraciones especiales) puede tomar hasta ese límite.</p>
+      <p>El tiempo estimado de entrega es de <strong>2 a 4 horas</strong> después de realizar el pago y de que este pase a verificación. El plazo máximo de entrega, para casos de alta demanda o verificaciones más lentas, es de <strong>2 días</strong>.</p>
+      <div class="note"><svg class="i-ico" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg>Si pasados <strong>3 días</strong> desde el pago el servicio sigue sin entregarse, se hace la devolución sin ningún problema.</div>
     </section>
 
     <section id="precios" class="reveal">
@@ -231,34 +221,39 @@ footer{border-top:1px solid var(--line); padding:26px 0; text-align:center; font
       <p>Nuestros precios son fijos y no manejamos descuentos, negociaciones ni rebajas por comparación con otros proveedores. El precio que ves publicado, o el que se confirma por WhatsApp o Discord, es el precio final del servicio.</p>
     </section>
 
+    <section id="renovaciones" class="reveal">
+      <div class="sec-title"><span class="sec-num">7</span><h2>Renovaciones y Fee por atraso</h2></div>
+      <p>Cada servicio se renueva en su fecha de vencimiento. Si el servicio vence y no se renueva ese mismo día, se cobra un <strong>Fee adicional por atraso</strong> para poder reactivarlo. Te recomendamos renovar a tiempo o avisarnos con anticipación si necesitas más plazo.</p>
+    </section>
+
+    <section id="paneles" class="reveal">
+      <div class="sec-title"><span class="sec-num">8</span><h2>Instalación de paneles</h2></div>
+      <p>La instalación de paneles de administración es <strong>opcional</strong>. Si la solicitas, tiene un costo de <strong>$1.50 USD</strong>. Si no la solicitas, no se cobra nada por este concepto.</p>
+    </section>
+
+    <section id="entrega-funcional" class="reveal">
+      <div class="sec-title"><span class="sec-num">9</span><h2>Entrega funcional</h2></div>
+      <p>Entregamos todos nuestros servicios completamente funcionales. Una vez entregado, si tú, un tercero con acceso o cualquier persona autorizada por ti daña, desconfigura o mueve elementos del servicio, <strong>no nos hacemos responsables</strong> por esos daños ni por las fallas que ocasionen.</p>
+    </section>
+
     <section id="registro" class="reveal">
-      <div class="sec-title"><span class="sec-num">7</span><h2>Registro de actividad</h2></div>
+      <div class="sec-title"><span class="sec-num">10</span><h2>Registro de actividad</h2></div>
       <p>Guardamos un registro de pagos, entregas, comunicaciones y del uso relevante de los servicios. Esta información se usa únicamente para resolver disputas, verificar reembolsos y dar soporte, y se maneja de forma confidencial.</p>
     </section>
 
     <section id="responsabilidad" class="reveal">
-      <div class="sec-title"><span class="sec-num">8</span><h2>Límite de responsabilidad</h2></div>
-      <p>No respondemos por pérdidas indirectas derivadas del uso del servicio, como pérdida de jugadores, de ingresos o de datos que el cliente no haya respaldado. Recomendamos mantener copias de seguridad propias de la información importante alojada en tu VPS o servidor.</p>
+      <div class="sec-title"><span class="sec-num">11</span><h2>Límite de responsabilidad</h2></div>
+      <p>No respondemos por pérdidas indirectas derivadas del uso del servicio, como pérdida de jugadores, de ingresos o de datos que el cliente no haya respaldado, ni por daños que el propio cliente u otra persona con acceso al servicio haya causado. Recomendamos mantener copias de seguridad propias de la información importante alojada en tu VPS o servidor.</p>
     </section>
 
     <section id="cuenta" class="reveal">
-      <div class="sec-title"><span class="sec-num">9</span><h2>Suspensión o cancelación del servicio</h2></div>
-      <p>Podemos suspender o cancelar un servicio cuando se incumple cualquiera de estos términos, cuando hay impago, o cuando lo exige la ley. Cuando la causa es un incumplimiento del cliente (abuso de recursos, mala conducta o actividad maliciosa), la cancelación no genera reembolso.</p>
+      <div class="sec-title"><span class="sec-num">12</span><h2>Suspensión o cancelación del servicio</h2></div>
+      <p>Podemos suspender o cancelar un servicio cuando se incumple cualquiera de estos términos, cuando hay impago, o cuando lo exige la ley. Cuando la causa es un incumplimiento del cliente (abuso de recursos, mala conducta o actividad maliciosa), la cancelación no genera reembolso ni remplazo.</p>
     </section>
 
     <section id="cambios" class="reveal">
-      <div class="sec-title"><span class="sec-num">10</span><h2>Cambios en estos términos</h2></div>
+      <div class="sec-title"><span class="sec-num">13</span><h2>Cambios en estos términos</h2></div>
       <p>Podemos actualizar estos términos cuando sea necesario. Si hay cambios importantes, lo avisaremos por nuestro Discord. Seguir usando el servicio después de un cambio implica que lo aceptas.</p>
-    </section>
-
-    <section id="cookies" class="reveal">
-      <div class="sec-title"><span class="sec-num">11</span><h2>Cookies</h2></div>
-      <p>Usamos almacenamiento del navegador (cookies y <code>localStorage</code>) de dos tipos:</p>
-      <ul class="card-list">
-        <li><span class="dot"></span><strong>Necesarias:</strong> recuerdan tu tema (claro/oscuro) y tu idioma. No requieren tu permiso porque no rastrean tu actividad, solo guardan tu preferencia en tu propio navegador.</li>
-        <li><span class="dot"></span><strong>De terceros (opcionales):</strong> si aceptas el aviso de cookies, cargamos el widget de reseñas de Trustpilot en nuestra página de Nosotros, que puede poner sus propias cookies para mostrarte esas reseñas.</li>
-      </ul>
-      <p>Puedes cambiar tu decisión en cualquier momento borrando los datos de este sitio desde la configuración de tu navegador, lo que hará que el aviso vuelva a aparecer.</p>
     </section>
 
     <section id="contacto" class="reveal" style="border-bottom:none;">
@@ -299,15 +294,6 @@ var so=new IntersectionObserver(function(es){
   });
 },{rootMargin:'-96px 0px -70% 0px'});
 secs.forEach(function(s){so.observe(s);});
-</script>
-
-<script>
-var COOKIE_KEY='ks-cookie-consent';
-function getConsent(){ try{ return localStorage.getItem(COOKIE_KEY); }catch(e){ return null; } }
-function setConsent(v){ try{ localStorage.setItem(COOKIE_KEY, v); }catch(e){} }
-(function(){ if(!getConsent()){ window.addEventListener('load', function(){ setTimeout(function(){ var b=document.getElementById('cookieBar'); if(b) b.classList.add('show'); },600); }); } })();
-document.getElementById('cookieAccept').addEventListener('click', function(){ setConsent('accepted'); document.getElementById('cookieBar').classList.remove('show'); });
-document.getElementById('cookieReject').addEventListener('click', function(){ setConsent('rejected'); document.getElementById('cookieBar').classList.remove('show'); });
 </script>
 </body>
 </html>
